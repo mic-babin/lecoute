@@ -7,6 +7,41 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+ require("dotenv").config({
+   path: `.env.${process.env.NODE_ENV}`,
+ })
+ 
 module.exports = {
-  plugins: [],
+  siteMetadata: {
+    title: "L'écoute - Centre de consultation et de relation d'aide",
+    description: "TODO - add description"
+  },
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `d3iketmxpc1q`, 
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    // Do I really need? -> Needed for source instance name i think
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `styles`,
+        path: `${__dirname}/src/assets/styles/`,
+      },
+    },
+  ],
 }
