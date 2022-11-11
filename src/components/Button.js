@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-export const Button = styled(Link)`
+const Button = styled(Link)`
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
@@ -16,3 +16,5 @@ export const Button = styled(Link)`
         background-color: #ffffff;
     }
 `
+
+export default Button
