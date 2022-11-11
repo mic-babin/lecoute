@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Button from './button'
+import Button from './Button'
 import styled from 'styled-components'
 
 const Hero = (props) => {
