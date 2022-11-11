@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "./layout"
+import Layout from "../components/Layout"
 import * as sections from "../components/sections"
 import Fallback from "../components/fallback"
 
