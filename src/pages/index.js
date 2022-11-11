@@ -8,7 +8,7 @@ import Fallback from "../components/fallback"
 export default function Homepage(props) {
   const  homepage  = props.data.contentfulHomepage
   return (
-    <Layout {...homepage}>
+    <Layout >
       <div className="container">
         {homepage.blocks.map((block) => {
           const { id, internal: {type}, ...componentProps } = block
