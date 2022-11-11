@@ -1,50 +1,117 @@
 import * as React from "react"
-import Layout from "../components/Layout"
-import { Button } from "../components/Button"
-import { graphql} from "gatsby"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import * as sections from "../components/sections"
+import Fallback from "../components/fallback"
 
-export default function Home({ data }) {
 
+export default function Homepage(props) {
+  const  homepage  = props.data.contentfulHomepage
   return (
-    <Layout>
-      Hello world!
-      <Button>Test</Button>
-      <pre>{JSON.stringify(data, null, 4)}</pre>
+    <Layout {...homepage}>
+      <div className="container">
+        {homepage.blocks.map((block) => {
+          const { id, internal: {type}, ...componentProps } = block
+          const blocktype = type.replace('Contentful', '')
+          const Component = sections[blocktype] || Fallback
+          return <Component key={id} {...componentProps} />
+        })}
+      </div> 
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    imageSharp {
-      gatsbyImageData
+    contentfulHomepage {
       id
-    }
-    allContentfulHomepage {
-      nodes {
-        content {
-          ... on ContentfulHero {
-            id
+      title
+      description
+      image {
+        id
+        url
+      }
+      blocks:content {
+        ... on ContentfulHero {
+          id
+          internal {
+            type
+          }
+        }
+        ... on ContentfulServices {
+          id
+          internal {
+            type
+          }
+          title
+          kicker {
+            kicker
+          }
+          servicesCTA: cta {
+            href
+            text
+          }
+        }
+        ... on ContentfulAbout {
+          id
+          internal {
+            type
+          }
+          title
+          description1 {
+            description1
+          }
+          description2 {
+            description2
+          }
+          featured {
+            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
+          }
+        }
+        ... on ContentfulContactForm {
+          id
+          internal {
+            type
+          }
+          title
+          inputFields {
+            text
+            placeholder
+            type
+          }
+          contactFormCTA: cta {
+            text
+            href
+          }
+        }
+        ... on ContentfulContactInfo {
+          id
+          internal {
+            type
+          }
+          title
+          kicker {
+            kicker
+          }
+          contactList {
+            icon {
+              gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 100)
+            }
             title
-            kicker {
-              internal {
-                content
-              }
+            address
+          }
+          businessHours {
+            title
+            businessDaysAndTime {
+              day
+              time
             }
-            cta {
-              text
-              href
-            }
-            featured {
-              description
-              gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
-            }
+          }
+          googleMaps {
+            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
           }
         }
       }
     }
   }
 `
-
-
-//  <Link to='/about'>Hello</Link>
