@@ -9,14 +9,12 @@ export default function Homepage(props) {
   const  homepage  = props.data.contentfulHomepage
   return (
     <Layout >
-      <div className="container">
         {homepage.blocks.map((block) => {
           const { id, internal: {type}, ...componentProps } = block
           const blocktype = type.replace('Contentful', '')
           const Component = sections[blocktype] || Fallback
           return <Component key={id} {...componentProps} />
         })}
-      </div> 
     </Layout>
   )
 }

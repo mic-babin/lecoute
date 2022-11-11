@@ -7,7 +7,7 @@ body{
 }
 
 section{
-    padding: 60px 0;
+    padding: 90px 0;
 }
 
 h1{
@@ -16,9 +16,26 @@ h1{
     color: #293039;
 }
 
-.kicker{
+h2{
+    font-size: 42px !important;
+    font-weight: bolder;
     color: #293039;
+}
+h3{
+    font-size: 24px !important;
+    font-weight: bold; 
+    color: #293039;
+}
+p{
+    color:#51565D;
+}
+.kicker{
     font-size: 20px;
+}
+
+.blue-bg
+{
+    background-color: rgba(87,122,147,0.1) ;
 }
 
 /* XL */
