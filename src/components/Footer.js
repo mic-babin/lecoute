@@ -1,8 +1,6 @@
 import React from 'react'
 
-function Footer() {
-
-
+export const Footer = () => {
   return (
     <footer className='container'>
         <div className='d-flex justify-content-between'>
@@ -12,5 +10,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

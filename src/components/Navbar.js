@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
-function Navbar() {
+export const Navbar = () => {
   return (
     <nav>
         <ul>
@@ -12,5 +12,3 @@ function Navbar() {
     </nav>
   )
 }
-
-export default Navbar
