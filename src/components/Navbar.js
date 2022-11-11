@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Navbar = () => {
+export default function Navbar (){
   return (
     <nav>
         <ul>
