@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Button from './Button'
 import styled from 'styled-components'
+import Button from './Button'
 
 const Hero = () => {
     const data = useStaticQuery(graphql`
