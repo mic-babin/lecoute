@@ -16,6 +16,9 @@ module.exports = {
     title: "L'écoute - Centre de consultation et de relation d'aide",
     description: "TODO - add description"
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,

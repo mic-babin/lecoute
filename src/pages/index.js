@@ -41,29 +41,11 @@ export const query = graphql`
           internal {
             type
           }
-          title
-          kicker {
-            kicker
-          }
-          servicesCTA: cta {
-            href
-            text
-          }
         }
         ... on ContentfulAbout {
           id
           internal {
             type
-          }
-          title
-          description1 {
-            description1
-          }
-          description2 {
-            description2
-          }
-          featured {
-            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
           }
         }
         ... on ContentfulContactForm {
@@ -71,42 +53,11 @@ export const query = graphql`
           internal {
             type
           }
-          title
-          inputFields {
-            text
-            placeholder
-            type
-          }
-          contactFormCTA: cta {
-            text
-            href
-          }
         }
         ... on ContentfulContactInfo {
           id
           internal {
             type
-          }
-          title
-          kicker {
-            kicker
-          }
-          contactList {
-            icon {
-              gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 100)
-            }
-            title
-            address
-          }
-          businessHours {
-            title
-            businessDaysAndTime {
-              day
-              time
-            }
-          }
-          googleMaps {
-            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
           }
         }
       }
