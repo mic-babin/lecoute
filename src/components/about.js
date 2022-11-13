@@ -35,7 +35,7 @@ const About = () => {
                 />
                 )}
             </div>
-            <div className="col-xxl-6 col-lg-8 d-flex flex-column align-items-start justify-content-center ps-lg-5 py-5 pb-lg-0 pt-lg-5 my-5 my-lg-0">
+            <div className="col-xxl-6 col-lg-8 d-flex flex-column align-items-start justify-content-center ps-lg-5 pb-0 pb-lg-5 pt-5 mt-5 ">
                 {(title || name) && (<H2 className="ps-lg-5">{name} — <DarkText>{title}</DarkText></H2>)}
                 {description1 &&(<p className="kicker py-4 ps-lg-5">{description1.description1}</p>)}    
                 {description2 &&(<p className="kicker py-4 ps-lg-5">{description2.description2}</p>)}    

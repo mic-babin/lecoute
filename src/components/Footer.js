@@ -32,17 +32,15 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-        <section className="container">
-          <div className="row pb-5">
-              <Link to='#hero' className="col-lg-5 d-flex justify-content-center justify-content-lg-start">
-                {logo && <img src={logo.url} alt="logo" />}
+        <div className="container py-5">
+          <div className="row pb-4">
+              <Link to='#hero' className="col-lg-5 d-flex justify-content-center align-items-center justify-content-lg-start">
+                {logo && <Logo src={logo.url} alt="logo" />}
               </Link>
               <div className="col-lg-4 d-flex justify-content-around justify-content-lg-between align-items-center py-5">
                 {links && links.map((content) =>( 
-                  content.links.map((link)=> {
-                    console.log(link)
-                    return(<NavLink to={link.href}>{link.text}</NavLink>)})
-                  ))}
+                  content.links.map((link)=> (<NavLink to={link.href}>{link.text}</NavLink>))
+                ))}
               </div>
               <div className="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
                 {socials && socials.map((contact) => (
@@ -56,7 +54,7 @@ const Footer = () => {
               <div className="pt-3">&copy; {new Date().getFullYear()} L'écoute - Centre de consultation et de relation d'aide</div>
               <div className="pt-3">Réalisé avec ❤️ par <MetaLink target="_blank"href="https://griffincreative.ca">GriffinCreative</MetaLink></div>
           </Credits>
-        </section>
+        </div>
     </FooterWrapper>
   )
 }
@@ -98,6 +96,10 @@ const MetaLink = styled.a`
     color: #ffffff;
     font-weight: bolder
   }
+`
+
+const Logo = styled.img`
+  height: 90px;
 `
 
 export default Footer

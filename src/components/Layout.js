@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Header from './header'
 import Footer from './Footer'
+
 // import Head from "./head"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/styles/normalize.css'
@@ -11,7 +12,7 @@ function Layout({children}) {
     <>
         {/* For SEO */}
         {/* <Head {...props} /> */}
-        <Navbar />
+        <Header />
             {children}
         <Footer />
     </>
