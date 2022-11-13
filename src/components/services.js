@@ -33,7 +33,7 @@ const Services = () => {
 
 
   return (
-    <section className="blue-bg my-5">
+    <section className="blue-bg my-5" id="services">
       <div className="container">
         <div className="d-flex align-items-center flex-column">
             {title && (<h2>{title}</h2>)}

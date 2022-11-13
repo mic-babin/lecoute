@@ -26,7 +26,7 @@ const Hero = () => {
     const {title, kicker, cta, featured } = data.contentfulHero
 
   return (
-    <section className="container">
+    <section className="container" id="hero">
         <div className="row">
             <div className="col-lg-6 d-flex flex-column align-items-start justify-content-center pe-lg-5 py-5 py-lg-0 my-5 my-lg-0">
                 {title && (<h1>{title}</h1>)}
