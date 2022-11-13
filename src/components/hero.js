@@ -18,7 +18,7 @@ const Hero = () => {
                 href
                 }
                 featured {
-                    gatsbyImageData(quality: 100)
+                    gatsbyImageData(quality: 100, placeholder: BLURRED)
                 }
             }
         }

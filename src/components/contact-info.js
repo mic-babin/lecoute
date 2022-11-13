@@ -28,7 +28,7 @@ const ContactInfo = () => {
           }
         }
         googleMaps {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, placeholder: BLURRED)
         }
       }
     }

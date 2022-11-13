@@ -16,7 +16,7 @@ const About = () => {
           description2
         }
         featured {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, placeholder: BLURRED)
         }
       }
     }
