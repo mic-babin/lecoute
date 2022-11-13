@@ -34,7 +34,7 @@ const Services = () => {
 
   return (
     <section className="blue-bg my-5" id="services">
-      <div className="container">
+      <div className="container py-5 py-lg-0">
         <div className="d-flex align-items-center flex-column">
             {title && (<h2>{title}</h2>)}
             {kicker &&(<p className="kicker py-3">{kicker.kicker}</p>)}   
@@ -53,6 +53,7 @@ const Services = () => {
     </section>
   )
 }
+
 
 
 export default Services

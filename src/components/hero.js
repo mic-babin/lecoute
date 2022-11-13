@@ -33,7 +33,7 @@ const Hero = () => {
                 {kicker &&(<p className="kicker py-4">{kicker.kicker}</p>)}    
                 {cta && cta.map((content) => (<Button key={content.id} to={content.href}>{content.text}</Button>))}    
             </div>
-            <div className="col-lg-6 mt-5 mt-lg-0">
+            <div className="col-lg-6 my-5 my-lg-0 ">
                 {featured && (
                 <FeaturedImage
                     alt='featured'

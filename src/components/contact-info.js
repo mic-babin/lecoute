@@ -38,7 +38,7 @@ const ContactInfo = () => {
   return (
     <section className="container">
       <div className="row">
-        <div className="col-lg-6 d-flex flex-column justify-content-center pe-lg-5 mb-5 mb-lg-0">
+        <div className="col-lg-6 d-flex flex-column justify-content-center pe-lg-5 my-5 my-lg-0">
           {title && (<h2>{title}</h2>)}
           {kicker &&(<p className="kicker py-3">{kicker.kicker}</p>)}
           <div className="row pb-4">
