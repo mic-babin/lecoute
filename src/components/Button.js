@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const Button = styled(Link)`
+    white-space: nowrap;
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
