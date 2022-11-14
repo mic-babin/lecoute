@@ -27,7 +27,7 @@ const Hero = () => {
 
   return (
     <>  
-        <ScrollTo id="hero"></ScrollTo>
+        <ScrollTo id="home"></ScrollTo>
         <Section className="container">
             <div className="row">
                 <div className="col-lg-6 d-flex flex-column align-items-start justify-content-center pe-lg-5 pb-5 py-lg-0 mb-5 my-lg-0">
