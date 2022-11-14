@@ -62,7 +62,8 @@ function ContactForm() {
 
   return (
     <>
-      <Section className="container mt-0 mt-lg-5 px-3 px-sm-5 form-bg" id="contact">
+      <ScrollTo id="contact"></ScrollTo>
+      <Section className="container mt-0 mt-lg-5 px-3 px-sm-5 form-bg">
         <Shape className="d-none d-xxl-block"src={SVG} alt="shape" />
         <div className="my-3 my-sm-0 py-5 py-sm-0 d-flex flex-column align-items-center">
           {title && (<H2 className='px-3 text-center'>{title}</H2>)}
@@ -167,5 +168,8 @@ const ModalButton = styled.p`
   text-align: right;
   font-weight:bold;
   color: #395266;
+`
+const ScrollTo = styled.div`
+  transform: translateY(-130px)
 `
 export default ContactForm
