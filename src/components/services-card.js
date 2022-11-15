@@ -10,7 +10,7 @@ export const ServiceCard = (props) => {
 
   return (
         <Card className={`mb-3 mb-lg-0`} style={style}>
-            <img src={icon.url} alt="" />
+            <img src={icon.url} alt="icon" />
             <h3 className='py-3'>{title}</h3>
             <p>{description.description}</p>
         </Card>

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 const ContactInfo = () => {
@@ -20,6 +19,7 @@ const ContactInfo = () => {
           }
         }
         businessHours {
+          id
           title
           businessDaysAndTime {
             id
@@ -27,13 +27,10 @@ const ContactInfo = () => {
             time
           }
         }
-        googleMaps {
-          gatsbyImageData(quality: 100, placeholder: BLURRED)
-        }
       }
     }
   `)
-  const {title, kicker, contactList, businessHours, googleMaps } = data.contentfulContactInfo
+  const {title, kicker, contactList, businessHours } = data.contentfulContactInfo
   
   const address = (contact) => {
     switch (contact.title) {
@@ -55,7 +52,7 @@ const ContactInfo = () => {
             {kicker &&(<p className="kicker py-3">{kicker.kicker}</p>)}
             <div className="row pb-4">
               {contactList && contactList.map((contact, index) => (
-                <div className={index === 2 ? 'col-12': 'col-md-6 col-lg-12 col-xxl-6'}>
+                <div key={contact.id} className={index === 2 ? 'col-12': 'col-md-6 col-lg-12 col-xxl-6'}>
                   <div className="d-flex align-items-center py-3">
                     <Icon className="d-flex justify-content-center align-items-center">
                       <img src={contact.icon.url} alt="" />
@@ -75,7 +72,7 @@ const ContactInfo = () => {
             </div>
             <BusinessHoursWrapper className="blue-bg p-5 me-lg-5">
               {businessHours && businessHours.map((section) => (
-                <>
+                <div key="section.id">
                   <h3 className="pb-3">{section.title}</h3>
                   {section.businessDaysAndTime.map((content, index) => (
                     <div className="d-flex justify-content-between" key={content.id} style={{borderBottom: index === 0 ? '1px solid #395266' : ''}}>
@@ -87,14 +84,14 @@ const ContactInfo = () => {
                       </Time>
                     </div>
                   ))} 
-                </>      
+                </div>      
               ))}   
             </BusinessHoursWrapper>    
           </div>
           <div className="col-lg-6 mb-5 mb-lg-0">
             <ScrollTo  id="contact-info"></ScrollTo>
             <FeaturedMap>
-              <IFrame src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18305.17758251697!2d-71.18716718372069!3d46.999383905620796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xad630c9e0c543f23!2zNDfCsDAwJzA5LjAiTiA3McKwMTEnNDAuMiJX!5e0!3m2!1sen!2sca!4v1668507091691!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></IFrame>
+              <IFrame title="Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18305.17758251697!2d-71.18716718372069!3d46.999383905620796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xad630c9e0c543f23!2zNDfCsDAwJzA5LjAiTiA3McKwMTEnNDAuMiJX!5e0!3m2!1sen!2sca!4v1668507091691!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></IFrame>
             </FeaturedMap>
           </div>
         </div>

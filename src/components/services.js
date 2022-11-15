@@ -24,6 +24,7 @@ const Services = () => {
             }
           }
           cta {
+            id
             text
             href
           }
@@ -44,8 +45,8 @@ const Services = () => {
           </div>
           <div className="row mb-5">
               {services && services.map((content, index) => (
-                <div className="col-lg-4">
-                  <ServiceCard key={content.id} index={index} {...content}/>
+                <div className="col-lg-4" key={content.id}>
+                  <ServiceCard  index={index} {...content}/>
                 </div>
               ))}    
           </div>

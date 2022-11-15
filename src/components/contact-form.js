@@ -70,7 +70,7 @@ function ContactForm() {
           <Form onSubmit={handleSubmit}className="d-flex flex-column px-sm-5">
             <div className="row py-5">
               {inputFields && inputFields.map((content) => (
-                <div className='col-lg-6'>
+                <div className='col-lg-6' key={content.id}>
                   <Label>{content.text}</Label>
                   <Input 
                     key={content.id} 

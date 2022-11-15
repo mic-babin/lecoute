@@ -11,7 +11,9 @@ const Footer = () => {
           url
         }
         links {
+          id
           links {
+            id
             href
             text
           }
@@ -39,7 +41,9 @@ const Footer = () => {
               </Link>
               <div className="col-lg-4 d-flex justify-content-around justify-content-lg-between align-items-center py-5">
                 {links && links.map((content) =>( 
-                  content.links.map((link)=> (<NavLink to={link.href}>{link.text}</NavLink>))
+                  <div key={content.id}>
+                    {content.links.map((link)=> (<NavLink key={link.id} to={link.href}>{link.text}</NavLink>))}
+                  </div>
                 ))}
               </div>
               <div className="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">

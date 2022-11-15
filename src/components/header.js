@@ -15,6 +15,7 @@ const Header = () => {
           url
         }
         links {
+          id
           links {
             id
             href
@@ -45,16 +46,18 @@ const Header = () => {
           <Nav className="ms-auto">
             <div className="d-lg-flex align-items-center text-center pb-3 pb-lg-0"> 
               {links && links.map((content) =>( 
-                    content.links.map((link)=> (<NavLink href={link.href}>{link.text}</NavLink>))
+                    <div key={content.id}>
+                      {content.links.map((link) => (<NavLink key={link.id} href={link.href}>{link.text}</NavLink>))}
+                    </div>
               ))}
             </div>
             {socialLinks && socialLinks.map((contact) => (
                   <Phone key={contact.id} className="d-none d-lg-flex justify-content-center align-items-center ms-4" href={'tel:' + contact.address}>
                     <div className="d-flex align-items-center">
                       <Icon>  
-                        <img src={contact.icon.url} alt={contact.title} />
+                        <img src={contact.icon.url} alt='phone' />
                       </Icon>
-                      <span class="ms-3">{contact.address}</span> 
+                      <span className="ms-3">{contact.address}</span> 
                     </div>
                   </Phone>
                 ))}
