@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import * as sections from "../components/sections"
 import Fallback from "../components/fallback"
+import { SEO } from "../components/seo"
+
 
 
 export default function Homepage(props) {
@@ -18,6 +20,10 @@ export default function Homepage(props) {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO />
+)
 
 export const query = graphql`
   query {

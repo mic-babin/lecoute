@@ -46,9 +46,9 @@ const Header = () => {
           <Nav className="ms-auto">
             <div className="d-lg-flex align-items-center text-center pb-3 pb-lg-0"> 
               {links && links.map((content) =>( 
-                    <div key={content.id}>
+                    <React.Fragment key={content.id}>
                       {content.links.map((link) => (<NavLink key={link.id} href={link.href}>{link.text}</NavLink>))}
-                    </div>
+                    </React.Fragment>
               ))}
             </div>
             {socialLinks && socialLinks.map((contact) => (

@@ -1,4 +1,6 @@
 import {useEffect, useState} from 'react';
+import { graphql, useStaticQuery } from "gatsby"
+
 
 export const useMediaQuery = (query) => {
   const isBrowser = typeof window !== "undefined"
@@ -13,3 +15,21 @@ export const useMediaQuery = (query) => {
   });
   return matches;
 };
+
+export const useSiteMetadata = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          twitterUsername
+          image
+          siteUrl
+        }
+      }
+    }
+  `)
+
+  return data.site.siteMetadata
+}

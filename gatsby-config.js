@@ -13,8 +13,11 @@
  
 module.exports = {
   siteMetadata: {
-    title: "L'écoute - Centre de consultation et de relation d'aide",
-    description: "TODO - add description"
+    title: `L'écoute`,
+    description: `Centre de consultation et de relation d'aide`,
+    twitterUsername: `@lecoute`,
+    image: `/lecoute.png`,
+    siteUrl: `https://lecoute.ca`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
