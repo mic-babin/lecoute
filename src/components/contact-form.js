@@ -5,6 +5,7 @@ import SVG from '../assets/images/shape.svg'
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
+import fetch from 'node-fetch'
 
 
 
@@ -54,15 +55,25 @@ function ContactForm() {
       subscriberName: formFields.firstName,
       subscriberEmail: formFields.email,
     };
-    //call to the Netlify Function you created
-    fetch("../../.netlify/functions/emails", {
-      method: "POST",
-      body: JSON.stringify({
-        subscriberName: data.subscriberName,
-        subscriberEmail: data.subscriberEmail,
-        inviteeEmail: "l.levesque@lecoute.ca",
-      }),
-    });
+    
+    await fetch(
+      `http://localhost:8888/.netlify/functions/emails/welcome`,
+      {
+        headers: {
+          "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+        },
+        method: "POST",
+        body: JSON.stringify({
+          from: "l.levesque@lecoute.ca",
+          to: "michael.babin@outlook.fr",
+          subject: "Test",
+          parameters: {
+            name: "Michael"
+          },
+        }),
+      }
+    );
+
     console.log(data)
       handleShow();
       resetFormFields();
@@ -93,7 +104,7 @@ function ContactForm() {
                   <Input 
                     key={content.id} 
                     type={content.type} 
-                    mask={content.fieldName == 'phone' ? '(+1) 999 999 9999' : null }
+                    mask={content.fieldName === 'phone' ? '(+1) 999 999-9999' : null }
                     placeholder={content.placeholder} 
                     required={content.required} 
                     onChange={handleChange} 
