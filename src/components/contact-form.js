@@ -43,24 +43,14 @@ function ContactForm() {
     setFormFields(defaultFormFields);
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   console.log(formFields)
-  //   handleShow();
-  //   resetFormFields();
-  // };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const target = event.target & {
-      firstName: { value },
-      email: { value }
-    };
+    console.log(event)
+    
 
     const data = {
-      subscriberName: target.firstName,
-      subscriberEmail: target.email,
+      subscriberName: formFields.firstName,
+      subscriberEmail: formFields.email,
     };
     //call to the Netlify Function you created
     fetch("./.netlify/functions/emails", {
@@ -71,7 +61,7 @@ function ContactForm() {
         inviteeEmail: "l.levesque@lecoute.ca",
       }),
     });
-    console.log(target)
+    console.log(data)
       handleShow();
       resetFormFields();
   };
