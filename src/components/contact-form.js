@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 
 
+
 function ContactForm() {
   const data = useStaticQuery(graphql`
     query {
@@ -53,7 +54,7 @@ function ContactForm() {
       subscriberEmail: formFields.email,
     };
     //call to the Netlify Function you created
-    fetch("./.netlify/functions/emails", {
+    fetch("../../.netlify/functions/emails", {
       method: "POST",
       body: JSON.stringify({
         subscriberName: data.subscriberName,
