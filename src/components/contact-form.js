@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import SVG from '../assets/images/shape.svg'
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+import InputMask from 'react-input-mask';
 
 
 
@@ -92,6 +93,7 @@ function ContactForm() {
                   <Input 
                     key={content.id} 
                     type={content.type} 
+                    mask={content.fieldName == 'phone' ? '(+1) 999 999 9999' : null }
                     placeholder={content.placeholder} 
                     required={content.required} 
                     onChange={handleChange} 
@@ -106,7 +108,7 @@ function ContactForm() {
         </div>   
       </Section>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Body closeButton>
+        <Modal.Body>
           <h3 className='p-3'>Merci de communiquer avec moi</h3>
           <p className='px-3'>Votre message a bien été envoyé et sera traité dans les plus bref délais. Merci!</p>
           <ModalButton className="pe-3" onClick={handleClose}>
@@ -156,7 +158,7 @@ const Section = styled.section`
   border-bottom-right-radius: 150px;
 `
 
-const Input = styled.input`
+const Input = styled(InputMask)`
   margin-bottom: 15px;
   width: 100%;
   border: 1px solid #C9CED3;
