@@ -9,7 +9,7 @@ import fetch from 'node-fetch'
 
 
 
-function ContactForm() {
+const ContactForm = () =>  {
   const data = useStaticQuery(graphql`
     query {
       contentfulContactForm {
@@ -80,8 +80,17 @@ function ContactForm() {
         <Shape className="d-none d-xxl-block"src={SVG} alt="shape" />
         <div className="my-3 my-sm-0 py-5 py-sm-0 d-flex flex-column align-items-center">
           {title && (<H2 className='px-3 text-center'>{title}</H2>)}
-          <Form onSubmit={handleSubmit}className="d-flex flex-column px-sm-5">
+          <Form  
+            className="d-flex flex-column px-sm-5" 
+            name='contact-form' 
+            method='post'  
+            netlify-honeypot='bot-field'
+            data-netlify='true'
+            action='/'
+            >
             <div className="row py-5">
+              <input type="hidden" name='bot-field'/>
+              <input type="hidden" name='form-name' value='contact-form'/>
               {inputFields && inputFields.map((content) => (
                 <div className='col-lg-6' key={content.id}>
                   <Label>{content.text}</Label>
@@ -98,7 +107,7 @@ function ContactForm() {
                 </div>
               ))}
             </div> 
-            {cta && (<FormButton type="submit" className="align-self-center" key={cta.id}>{cta.text}</FormButton>)}   
+            {cta && (<FormButton type="submit" onclick={handleSubmit} className="align-self-center" key={cta.id}>{cta.text}</FormButton>)}   
           </Form> 
         </div>   
       </Section>
