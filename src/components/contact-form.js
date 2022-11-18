@@ -143,6 +143,11 @@ const FormButton = styled.button`
 const Section = styled.section`
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
+  @media only screen and (max-width: 576px) {
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  
 `
 
 const Input = styled(InputMask)`
