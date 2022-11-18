@@ -5,7 +5,6 @@ import SVG from '../assets/images/shape.svg'
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
-import fetch from 'node-fetch'
 
 
 
@@ -86,6 +85,7 @@ const ContactForm = () =>  {
             method='post'  
             netlify-honeypot='bot-field'
             data-netlify='true'
+            action='/success'
             >
             <div className="row py-5">
               <input type="hidden" name='bot-field'/>
