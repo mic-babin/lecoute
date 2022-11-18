@@ -41,9 +41,9 @@ const Footer = () => {
               </Link>
               <div className="col-lg-4 d-flex justify-content-around justify-content-lg-between align-items-center py-5">
                 {links && links.map((content) =>( 
-                  <div key={content.id}>
+                  <React.Fragment key={content.id}>
                     {content.links.map((link)=> (<NavLink key={link.id} to={link.href}>{link.text}</NavLink>))}
-                  </div>
+                  </React.Fragment>
                 ))}
               </div>
               <div className="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-end">
