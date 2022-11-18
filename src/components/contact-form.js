@@ -56,23 +56,7 @@ function ContactForm() {
       subscriberEmail: formFields.email,
     };
     
-    await fetch(
-      `http://localhost:8888/.netlify/functions/emails/welcome`,
-      {
-        headers: {
-          "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
-        },
-        method: "POST",
-        body: JSON.stringify({
-          from: "l.levesque@lecoute.ca",
-          to: "michael.babin@outlook.fr",
-          subject: "Test",
-          parameters: {
-            name: "Michael"
-          },
-        }),
-      }
-    );
+  
 
     console.log(data)
       handleShow();
