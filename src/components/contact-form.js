@@ -2,11 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 import SVG from '../assets/images/shape.svg'
-import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
-
-
 
 const ContactForm = () =>  {
   const data = useStaticQuery(graphql`
@@ -39,7 +36,6 @@ const ContactForm = () =>  {
   };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const [show, setShow] = useState(false);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -58,7 +54,6 @@ const ContactForm = () =>  {
   
 
     console.log(data)
-      handleShow();
       resetFormFields();
   };
 
@@ -67,8 +62,6 @@ const ContactForm = () =>  {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   
 
@@ -110,15 +103,6 @@ const ContactForm = () =>  {
           </Form> 
         </div>   
       </Section>
-      <Modal show={show} onHide={handleClose} centered>
-        <Modal.Body>
-          <h3 className='p-3'>Merci de communiquer avec moi</h3>
-          <p className='px-3'>Votre message a bien été envoyé et sera traité dans les plus bref délais. Merci!</p>
-          <ModalButton className="pe-3" onClick={handleClose}>
-            Fermer
-          </ModalButton>
-        </Modal.Body>
-      </Modal>
     </>
   )
 }
@@ -185,12 +169,12 @@ const Shape = styled.img`
   transform: rotate(180deg);
 `
 
-const ModalButton = styled.p`
-  cursor: pointer;
-  text-align: right;
-  font-weight:bold;
-  color: #395266;
-`
+// const ModalButton = styled.p`
+//   cursor: pointer;
+//   text-align: right;
+//   font-weight:bold;
+//   color: #395266;
+// `
 const ScrollTo = styled.div`
   transform: translateY(-130px)
 `
