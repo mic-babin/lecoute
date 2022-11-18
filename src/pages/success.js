@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-export const Success = () => {
+function Success() {
   return (
     <Layout>
         <div className='d-flex justify-content-center align-items-center'>
@@ -11,5 +11,7 @@ export const Success = () => {
     </Layout>
   )
 }
+
+export default Success
 
 
