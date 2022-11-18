@@ -7,8 +7,8 @@ function Success() {
   return (
     <Layout>
         <FullScreen className='d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='pb-4'>Merci de communiquer avec moi</h3>
-            <p className='px-4 pb-4'>Votre message a bien été envoyé et sera traité dans les plus bref délais. Merci!</p>
+            <h3 className='pb-4 px-4 text-center'>Merci de communiquer avec moi</h3>
+            <p className='px-4 pb-4 text-center'>Votre message a bien été envoyé et sera traité dans les plus bref délais. Merci!</p>
             <FormButton to='/'>Retour</FormButton>
         </FullScreen>
         

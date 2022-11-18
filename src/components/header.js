@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <HeaderWrapper collapseOnSelect expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="../#home">
           {logo && <Logo src={logo.url} alt="logo" />}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -47,7 +47,7 @@ const Header = () => {
             <div className="d-lg-flex align-items-center text-center pb-3 pb-lg-0"> 
               {links && links.map((content) =>( 
                     <React.Fragment key={content.id}>
-                      {content.links.map((link) => (<NavLink key={link.id} href={link.href}>{link.text}</NavLink>))}
+                      {content.links.map((link) => (<NavLink key={link.id} href={'../'+link.href}>{link.text}</NavLink>))}
                     </React.Fragment>
               ))}
             </div>
