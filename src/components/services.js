@@ -22,6 +22,12 @@ const Services = () => {
             icon {
               url
             }
+            cta {
+              id
+              text
+              href
+              id
+            }
           }
           cta {
             id
@@ -60,7 +66,7 @@ const Services = () => {
 }
 
 const ScrollTo = styled.div`
-  transform: translateY(-80px)
+  transform: translateY(-80px);
 `
 
 export default Services

@@ -41,8 +41,8 @@ const ContactInfo = () => {
       default:
         return '#contact-info'
     }
-
   }
+
   return (
     <>
       <section className="container">
@@ -67,7 +67,6 @@ const ContactInfo = () => {
                     </div>
                   </div>
                 </div>
-
               ))}
             </div>
             <BusinessHoursWrapper className="blue-bg p-5 me-lg-5">

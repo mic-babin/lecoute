@@ -62,7 +62,7 @@ const Section = styled.section`
     margin-top: 120px;
 `
 const ScrollTo = styled.div`
-  transform: translateY(-110px)
+  transform: translateY(-110px);
 `
 export default Hero
 
