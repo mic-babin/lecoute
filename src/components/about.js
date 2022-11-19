@@ -38,7 +38,7 @@ const About = () => {
                   )}
               </div>
               <div className="col-xxl-6 col-lg-8 d-flex flex-column align-items-start justify-content-center ps-lg-5 pb-0 pb-lg-5 pt-5 mt-5 ">
-                  {(title || name) && (<H2 className="ps-lg-5">{name} — <DarkText>{title}</DarkText></H2>)}
+                  {(title || name) && (<H2 className="ps-lg-5">{name} <DarkText>{title}</DarkText></H2>)}
                   {description1 &&(<p className="kicker py-4 ps-lg-5">{description1.description1}</p>)}    
                   {description2 &&(<p className="kicker py-4 ps-lg-5">{description2.description2}</p>)}    
               </div>
@@ -60,6 +60,7 @@ const DarkText = styled.span`
   color: #293039;
 `
 const H2 = styled.h2`
+font-size: 36px !important;
  @media only screen and (max-width: 400px) {
       font-size: 36px !important;
     }

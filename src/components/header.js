@@ -102,6 +102,6 @@ const Phone = styled(NavLink)`
 
 const Logo = styled.img`
   max-width: 68vw;
-  max-height: 70px;
+  max-height: 80px;
 `
 export default Header
