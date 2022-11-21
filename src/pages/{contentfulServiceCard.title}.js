@@ -3,6 +3,7 @@ import React from 'react'
 import ContactCards from '../components/contact-cards'
 import Layout from '../components/Layout'
 import Service from '../components/service'
+import { SEO } from "../components/seo"
 
 const ServiceTemplate = ({data}) => {
     
@@ -17,6 +18,9 @@ const ServiceTemplate = ({data}) => {
   )
 }
 
+export const Head = () => (
+    <SEO />
+  )
 
 
 
@@ -26,11 +30,10 @@ query GetService($title: String) {
       title
       id
       longDescription {
-        longDescription
+        raw
       }
       featured {
-        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, quality: 100)
-      }
+        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, quality: 100)      }
     }
   }
 `

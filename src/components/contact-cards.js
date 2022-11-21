@@ -48,8 +48,8 @@ const ContactCards = () => {
 
 
   return (
-      <section className="my-5">
-        <div className="py-5 py-lg-0">
+      <section className="">
+        <div className="pb-5 py-lg-0">
           <div className="d-flex align-items-center flex-column">
               {title && (<h2>{title}</h2>)}
               {kicker &&(<p className="kicker py-3 text-center" style={{maxWidth: '600px'}}>{kicker.kicker}</p>)}   
