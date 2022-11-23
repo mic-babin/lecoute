@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Button from './Button'
+import { getImage } from 'gatsby-plugin-image'
+import Button from './styled-components/Button'
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import Image from './styled-components/image'
 
 const Service = ({data}) => {
     const {title, longDescription, featured } = data.contentfulServiceCard
@@ -29,11 +30,7 @@ const Service = ({data}) => {
     )
 }
 
-const FeaturedImage = styled(GatsbyImage)`
-  border-top-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  width:calc(100%);
-  height:700px;
+const FeaturedImage = styled(Image)`
   box-shadow: 50px 50px 0px rgba(87,122,147,0.25);
 `
 

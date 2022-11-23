@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Button from './Button'
+import Button from './styled-components/Button'
 import { ServiceCard } from "./services-card"
 import styled from "styled-components"
 

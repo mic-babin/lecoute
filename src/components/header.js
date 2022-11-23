@@ -4,7 +4,7 @@ import { useStaticQuery, graphql} from "gatsby"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Icon from './styled-components/icon'
 
 
 const Header = () => {
@@ -72,17 +72,6 @@ const HeaderWrapper = styled(Navbar)`
   background-color: #ffffff;
   color: #ffffff;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
-`
-
-const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #577A93;
-  height: 35px;
-  width: 35px;
-  min-width: 35px;
-  border-radius: 50%;
 `
 
 const NavLink = styled(Nav.Link)`

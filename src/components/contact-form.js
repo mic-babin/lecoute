@@ -111,6 +111,7 @@ const Form = styled.form`
   max-width:700px;
   display: block;
 `
+
 const Label = styled.label`
   display:block;
   font-size: 14px;
@@ -140,6 +141,7 @@ const FormButton = styled.button`
     width: 260px !important;
   }
 `
+
 const Section = styled.section`
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
@@ -147,7 +149,6 @@ const Section = styled.section`
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
   }
-  
 `
 
 const Input = styled(InputMask)`
@@ -162,11 +163,13 @@ const Input = styled(InputMask)`
     outline: none !important;
   }
 `
+
 const H2 = styled.h2`
   @media only screen and (max-width: 576px) {
     font-size: 30px !important;
   }
 `
+
 const Shape = styled.img`
   position: absolute;
   bottom:0;
@@ -174,12 +177,6 @@ const Shape = styled.img`
   transform: rotate(180deg);
 `
 
-// const ModalButton = styled.p`
-//   cursor: pointer;
-//   text-align: right;
-//   font-weight:bold;
-//   color: #395266;
-// `
 const ScrollTo = styled.div`
   transform: translateY(-130px)
 `

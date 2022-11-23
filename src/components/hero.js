@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
-import Button from './Button'
+import Button from './styled-components/Button'
+import Image from './styled-components/image'
 
 const Hero = () => {
     const data = useStaticQuery(graphql`
@@ -40,7 +41,6 @@ const Hero = () => {
                     <FeaturedImage
                         alt='featured'
                         image={getImage(featured.gatsbyImageData)}
-                        // className={styles.aboutHeroImage}
                     />
                     )}
                 </div>
@@ -50,11 +50,7 @@ const Hero = () => {
   )
 }
 
-const FeaturedImage = styled(GatsbyImage)`
-  border-top-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  width:calc(100%);
-  max-height:700px;
+const FeaturedImage = styled(Image)`
   box-shadow: -50px -50px 0px rgba(57,82,102,0.25), 50px 50px 0px rgba(87,122,147,0.25);
 `
 

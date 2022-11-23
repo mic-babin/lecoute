@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
+import Icon from './styled-components/icon'
 
 const ContactCards = () => {
     const data = useStaticQuery(graphql`
@@ -102,13 +103,7 @@ const ContactCards = () => {
   )
 }
 
-const Icon = styled.div`
-  background-color: #577A93;
-  height: 50px;
-  width: 50px;
-  min-width: 50px;
-  border-radius: 50%;
-`
+
 const Title = styled.div`
   font-size: 18px;
   color: #293039; 
