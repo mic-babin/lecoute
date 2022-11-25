@@ -52,7 +52,7 @@ function ContactForm() {
     //call to the Netlify Function you created
     console.log(formFields)
     try {
-      await axios.post('/api/email', {
+      await axios.post('/.netlify/functions/email', {
           firstName, lastName, email, phone
       })
       resetFormFields();
