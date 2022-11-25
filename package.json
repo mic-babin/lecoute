@@ -14,11 +14,10 @@
     "netlify": "netlify dev"
   },
   "dependencies": {
+    "@gatsbyjs/reach-router": "^2.0.0-v2.0.3",
     "@netlify/functions": "^1.3.0",
-    "@reach/router": "^1.3.4",
     "axios": "^1.2.0",
     "babel-plugin-styled-components": "^2.0.7",
-    "better-ajv-errors": "^1.2.0",
     "bootstrap": "^5.2.2",
     "dotenv": "^16.0.3",
     "gatsby": "^5.0.0",
@@ -28,7 +27,6 @@
     "gatsby-source-contentful": "^8.0.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
-    "js-yaml": "^4.1.0",
     "netlify-cli": "^12.2.7",
     "nodemailer": "^6.8.0",
     "react": "^18.2.0",
