@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const { EMAIL_HOST,EMAIL_PORT,EMAIL_USER,EMAIL_PASSWORD} = process.env;
 
-var mailList = [ "michael.babin@outlook.fr; michael.babin86@gmail.com"];
+var mailList = [ "lyson.levesque@hotmail.com", "l.levesque@lecoute.ca"];
 
 const authData = nodemailer.createTransport({
   host: EMAIL_HOST,
