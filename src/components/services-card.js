@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 
 
 export const ServiceCard = (props) => {
-    console.log(props)
     const {title, description, icon, index, cta} = props
     const isDesktop = useMediaQuery('(min-width: 992px)')
     const style = {marginTop : (index % 2 === 0 && isDesktop) ? "30px" : "0"}

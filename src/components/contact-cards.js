@@ -35,7 +35,6 @@ const ContactCards = () => {
         }
     `)
     const {title, kicker, contactList, businessHours } = data.contentfulContactInfo
-        console.log(businessHours)
     const address = (contact) => {
         switch (contact.title) {
         case 'Téléphone': 
