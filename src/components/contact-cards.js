@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import Icon from './styled-components/icon'
+import { motion } from 'framer-motion'
 
 const ContactCards = () => {
     const data = useStaticQuery(graphql`
@@ -50,14 +51,52 @@ const ContactCards = () => {
   return (
       <section className="">
         <div className="pb-5 py-lg-0">
-          <div className="d-flex align-items-center flex-column">
-              {title && (<h2>{title}</h2>)}
-              {kicker &&(<p className="kicker py-3 text-center" style={{maxWidth: '600px'}}>{kicker.kicker}</p>)}   
+          <div className="d-flex align-items-center flex-column text-center">
+            {title && (
+                <motion.h2
+                    whileInView={{x:0, opacity: 1}} 
+                    initial={{x:-200, opacity: 0}}
+                    transition={{
+                        duration: 0.4,
+                        delay: 0.2,
+                        type: 'spring'
+                    }}
+                    viewport={{ once: true }}
+                >
+                    {title}
+                </motion.h2>
+            )}
+                {kicker &&(
+                    <motion.p 
+                        className="kicker py-3 text-center" 
+                        style={{maxWidth: '600px'}}
+                        whileInView={{x:0, opacity: 1}} 
+                        initial={{x:-200, opacity: 0}}
+                        transition={{
+                            duration: 0.4,
+                            delay: 0.4,
+                            type: 'spring'
+                        }}
+                        viewport={{ once: true }}   
+                    >
+                        {kicker.kicker}
+                    </motion.p>
+                )}   
           </div>
           <div className="row pb-4">
-              {contactList && contactList.map((contact) => (
+              {contactList && contactList.map((contact, index) => (
                 <div key={contact.id} className='col-xl-3 col-lg-6 my-3'>
-                    <Card className="p-5">
+                    <Card 
+                        className="p-5"
+                        whileInView={{ opacity: 1}} 
+                        initial={{ opacity: 0}}
+                        transition={{
+                            duration: 0.4,
+                            delay: index/5 + 0.4,
+                            type: 'spring'
+                        }}
+                        viewport={{ once: true }}    
+                    >
                         <Icon className="d-flex justify-content-center align-items-center">
                             <img src={contact.icon.url} alt="" />
                         </Icon>
@@ -71,7 +110,17 @@ const ContactCards = () => {
                 </div>
               ))}
               <div className="col-xl-3 col-lg-6 my-3">
-              <Card className="p-5">
+              <Card 
+                className="p-5"
+                whileInView={{ opacity: 1}} 
+                initial={{ opacity: 0}}
+                transition={{
+                    duration: 0.4,
+                    delay: 1,
+                    type: 'spring'
+                }}
+                viewport={{ once: true }}   
+              >
                 {businessHours && businessHours.map((content) => (
                         <>
                             <Icon className="d-flex justify-content-center align-items-center">
@@ -118,7 +167,7 @@ const Address = styled.a`
     color: #293039;
   }
 `
-const Card = styled.div`
+const Card = styled(motion.div)`
     background-color: rgba(57,82,102,0.1);
     border-radius: 24px;
     height: 100%;

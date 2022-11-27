@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const { EMAIL_HOST,EMAIL_PORT,EMAIL_USER,EMAIL_PASSWORD} = process.env;
 
-var mailList = [ "lyson.levesque@hotmail.com", "l.levesque@lecoute.ca"];
+var mailList = [ "l.levesque@lecoute.ca", "lyson.levesque@hotmail.com", ];
 
 const authData = nodemailer.createTransport({
   host: EMAIL_HOST,
@@ -20,9 +20,9 @@ const authData = nodemailer.createTransport({
 exports.handler = async (event,  context) => {
     const method = event.httpMethod;
     const {firstName, lastName, email, phone} = JSON.parse(event.body)
-    const from = "Formulaire de contact <noreply.lecoute@gmail.com>";
+    // const from = "Formulaire de contact <noreply.lecoute@gmail.com>";
+    const from = 'michael.babin@griffincreative.ca'
     const emailSubject = "Formulaire de contact - Lecoute.ca";
-    console.log(method)
     const data = {
         from: from,
         to: mailList,

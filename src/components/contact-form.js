@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
 import axios from 'axios';
+import { motion } from 'framer-motion'
 
 
 function ContactForm() {
@@ -49,8 +50,6 @@ function ContactForm() {
     event.preventDefault();
     const {firstName, lastName, email, phone} = formFields
 
-    //call to the Netlify Function you created
-    console.log(formFields)
     try {
       await axios.post('/.netlify/functions/email', {
           firstName, lastName, email, phone
@@ -77,32 +76,45 @@ function ContactForm() {
   return (
     <>
       <ScrollTo id="contact"></ScrollTo>
-      <Section className="container mt-0 mt-lg-5 px-3 px-sm-5 form-bg">
-        <Shape className="d-none d-xxl-block"src={SVG} alt="shape" />
-        <div className="my-3 my-sm-0 py-5 py-sm-0 d-flex flex-column align-items-center">
-          {title && (<H2 className='px-3 text-center'>{title}</H2>)}
-          <Form onSubmit={handleSubmit}className="d-flex flex-column px-sm-5">
-            <div className="row py-5">
-              {inputFields && inputFields.map((content) => (
-                <div className='col-lg-6' key={content.id}>
-                  <Label>{content.text}</Label>
-                  <Input 
-                    key={content.id} 
-                    type={content.type} 
-                    placeholder={content.placeholder}
-                    mask={content.fieldName === 'phone' ? '(+1) 999 999-9999' : null }
-                    required={content.required} 
-                    onChange={handleChange} 
-                    name={content.fieldName}
-                    value={formFields[content.fieldName]}
-                    />
-                </div>
-              ))}
-            </div> 
-            {cta && (<FormButton type="submit" className="align-self-center" key={cta.id}>{cta.text}</FormButton>)}   
-          </Form> 
-        </div>   
-      </Section>
+      <motion.div
+        whileInView={{ opacity: 1}} 
+        initial={{ opacity: 0}}
+        transition={{
+          duration: 0.4,
+          delay: 0.2,
+          type: 'spring'
+        }}
+        viewport={{ once: true }}
+      >
+        <Section className="container mt-0 mt-lg-5 px-3 px-sm-5 form-bg">
+          <Shape className="d-none d-xxl-block"src={SVG} alt="shape" />
+          <div className="my-3 my-sm-0 py-5 py-sm-0 d-flex flex-column align-items-center">
+            {title && (<H2 className='px-3 text-center'>{title}</H2>)}
+            <Form onSubmit={handleSubmit}className="d-flex flex-column px-sm-5">
+              <div className="row py-5">
+                {inputFields && inputFields.map((content) => (
+                  <div className='col-lg-6' key={content.id}>
+                    <Label>{content.text}</Label>
+                    <Input 
+                      key={content.id} 
+                      type={content.type} 
+                      placeholder={content.placeholder}
+                      mask={content.fieldName === 'phone' ? '(+1) 999 999-9999' : null }
+                      required={content.required} 
+                      onChange={handleChange} 
+                      name={content.fieldName}
+                      value={formFields[content.fieldName]}
+                      />
+                  </div>
+                ))}
+              </div> 
+              {cta && (<FormButton type="submit" className="align-self-center" key={cta.id}>{cta.text}</FormButton>)}   
+            </Form> 
+          </div>   
+        </Section>
+      </motion.div>
+
+      
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Body>
           <h3 className='p-3'>Merci de communiquer avec moi</h3>
